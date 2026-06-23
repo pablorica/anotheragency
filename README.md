@@ -2,7 +2,7 @@
 A clean slate Wordpress application for wordpress.
 Based in [sage](https://github.com/roots/sage?tab=readme-ov-file) and in [Nextly](https://github.com/web3templates/nextly-template)
 
-[![version](https://img.shields.io/badge/version-0.1.1-pink.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.1.2-pink.svg)](https://semver.org)
 
 
 ## Staging Server
@@ -849,7 +849,7 @@ See the [ACF Composer installation](https://github.com/Log1x/acf-composer?tab=re
 #### Install via Composer:
 
 ```bash
-cd /wp_data/wp-content/themes/seadesign
+cd wordpress/wp-content/themes/codigo
 composer require log1x/acf-composer
 ```
 
@@ -948,6 +948,41 @@ While `$block->preview` is an option for conditionally modifying your block when
 Simply duplicate your existing view prefixing it with `preview-` (e.g. `preview-example.blade.php`).
 
 
+### Poet
+
+```bash
+cd wordpress/wp-content/themes/codigo
+composer require log1x/poet
+```
+
+Start with publishing the Poet configuration file using Acorn:
+
+```bash
+docker compose run wpcli acorn vendor:publish --provider="Log1x\Poet\PoetServiceProvider"
+...
+  Copying file [vendor/log1x/poet/config/poet.php] to [config/poet.php] ..... DONE
+```
+
+### Registering a Post Type
+
+All configuration related to Poet is located in `config/poet.php`. Here you will find an example Book post type pre-configured with a few common settings:
+
+```php
+    'post' => [
+        'book' => [
+            'enter_title_here' => 'Enter book title',
+            'menu_icon' => 'dashicons-book-alt',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'has_archive' => false,
+            'labels' => [
+                'singular' => 'Book',
+                'plural' => 'Books',
+            ],
+        ],
+    ],
+```
+
 
 ### Sage directives
 
@@ -958,7 +993,7 @@ Simply duplicate your existing view prefixing it with `preview-` (e.g. `preview-
 #### Install Sage directives
 
 ```bash
-cd /wp_data/wp-content/themes/seadesign
+cd wordpress/wp-content/themes/codigo
 composer require log1x/sage-directives
 ```
 

@@ -38,9 +38,10 @@ domReady(async () => {
     const app = createApp(Example);
     app.mount('#vueExample');
   }
-  if (document.getElementById("mainMenu")) {
+  //No working
+  if (document.getElementById("mainMenu2")) {
     const app = createApp(MenuCollapse);
-    app.mount('#mainMenu');
+    app.mount('#mainMenu2');
   }
 });
 
