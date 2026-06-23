@@ -1,5 +1,4 @@
 
-import domReady from '@wordpress/dom-ready';
 import Emitter from 'tiny-emitter';
 
 /**
@@ -21,6 +20,13 @@ import jobs from "./modules/jobs";
 import salaries from "./modules/salaries";
 import loadEffect from "./modules/loadEffect";
 
+function domReady(callback) {
+  if (document.readyState !== 'loading') {
+    callback();
+  } else {
+    document.addEventListener('DOMContentLoaded', callback);
+  }
+}
 
 domReady(async () => {
   //consoleHello('DOMContentLoaded')
