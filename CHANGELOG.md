@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.1.1] - 2026-06-23
+
+### Added
+
+- Views
+
 
 ## [0.1.0] - 2026-06-23
 
