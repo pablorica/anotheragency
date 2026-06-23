@@ -9,6 +9,10 @@ In your project root, run:
 ```bash
 npm install vue
 npm install -D @vitejs/plugin-vue
+
+## If Docker is used, run the following command inside the Node container:
+docker compose run --rm node sh -lc "npm install vue"
+docker compose run --rm node sh -lc "npm install -D @vitejs/plugin-vue"
 ```
 
 
@@ -74,6 +78,9 @@ Back in your theme folder:
 
 ```bash
 npm run dev
+
+## Or if Docker is used, run the following command inside the Node container:
+docker compose run --rm node sh -lc "npm run dev"
 ```
 
 You should see “Hello from Vue!” rendered in your theme!

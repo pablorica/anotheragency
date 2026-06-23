@@ -1,5 +1,5 @@
 /**
- * Add CSS Hidden on mobile to Gutenberg Spacer Block
+ * Add Mobile show to Gutenberg Spacer Block
  *
  * Bud.js
  * @see {@link https://bud.js.org/extensions/bud-preset-wordpress/editor-integration/styles}
@@ -13,9 +13,10 @@
  */
 
 
+
 export default {
   block: `core/spacer`,
-  name: 'mobile-only:hidden',
-  label: `Hide on mobile`,
+  name: 'mobile-show',
+  label: `Show in mobile`,
   isDefault: false
 }

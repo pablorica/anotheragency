@@ -1,1 +1,82 @@
 
+import domReady from '@wordpress/dom-ready';
+import Emitter from 'tiny-emitter';
+
+/**
+ * VUE dependencies
+ */
+import { createApp } from 'vue';
+import Example from './vuecomponents/Example.vue';
+import MenuCollapse from './vuecomponents/MenuCollapse.js';
+
+export var emitter = new Emitter();
+
+/**
+ * Custom modules
+ */
+import tinyslider from "./modules/tinyslider";
+import collaborators from "./modules/collaborators";
+import accordion from "./modules/accordion";
+import jobs from "./modules/jobs";
+import salaries from "./modules/salaries";
+import loadEffect from "./modules/loadEffect";
+
+
+domReady(async () => {
+  //consoleHello('DOMContentLoaded')
+
+  /**
+   * VUE Components
+   */
+  if (document.getElementById("vueExample")) {
+    const app = createApp(Example);
+    app.mount('#vueExample');
+  }
+  if (document.getElementById("mainMenu")) {
+    const app = createApp(MenuCollapse);
+    app.mount('#mainMenu');
+  }
+});
+
+/**
+ * Custom Modules
+ */
+const CDG = {
+  onreadyFunctions: function() {
+    tinyslider();
+    collaborators();
+    accordion();
+
+
+
+    window.addEventListener("resize", function(){
+      //consoleHello('window has resized');
+      if(window.innerWidth < 768){
+        //consoleHello('narrow');
+      }
+      else{
+        //consoleHello('wide');
+      }
+    });
+  },
+
+  onloadFunctions: function() {
+    //consoleHello('CDG is loaded');
+    jobs();
+    salaries();
+
+    if(document.body.classList.contains('page-template-template-home')){
+      //consoleHello('home page');
+      loadEffect();
+    }
+  }
+};
+
+CDG.onreadyFunctions();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  CDG.onloadFunctions();
+});
+
+
