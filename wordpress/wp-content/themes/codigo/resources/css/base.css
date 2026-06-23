@@ -1,0 +1,192 @@
+
+@theme {
+  /* Colours (must match with resources/js/acf-colors.js ) and settings.color.palette in theme.json */
+  --color-black:     #000;
+  --color-white:     #fff;
+  --color-chalk:    #E6E1DC;
+  --color-charcoal:  #202020;
+  --color-char:      #6B6B6B;
+  --color-white:     #fff;
+  --color-walnut:    #B4695F;
+  --color-citrus:    #D7BE7D;
+  --color-sage:      #91A58C;
+  --color-teal:      #739696;
+  --color-lilac:     #7D7D9B;
+  --color-gray:      #BAB7B3;
+  --color-lightgray: #D9D3CE;
+  --color-border:    #BAB7B3;
+
+
+
+  /* Fonts */
+  --font-sans: 'Matter Medium', sans-serif;
+  --font-serif: 'Swiss Time', serif;
+
+  --font-weight-*: initial;
+  /* --font-weight-hairline: 100;
+  --font-weight-thin: 200; */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  /* --font-weight-semibold: 600; */
+  --font-weight-bold: 700;
+  /*--font-weight-extrabold: 800;
+  --font-weight-black: 900; */
+
+  /* Font Size */
+
+  --text-sm: 10px; /* Custom */
+  --text-xs: 11px; /* orig 0.75rem  */
+  --text-md: 12px; /* Custom */
+  /*--text-base: 1rem; /* 14px */
+  --text-lg: 16px; /* Custom */
+  --text-xl: 18px; /*   */
+  --text-2xl: 24px;   /* orig 1.5rem */
+  --text-3xl: 30px;   /* */
+  --text-4xl: 36px; /* orig  2.25rem */
+  --text-5xl: 48px; /* orig 3rem */
+  --text-6xl: 60px; /* orig 3.75rem */
+  --text-7xl: 72px; /* orig 4.5rem */
+  --text-8xl: 86px; /* 6rem  */
+  --text-9xl: 106px /* custom */
+
+
+
+  /* Letter Spacing */
+
+  /*--tracking-tighter: -0.05em; /* -5%  */
+  --tracking-tight:  -0.025em /* -2.5%  */
+  --tracking-normal: 0  /* 0em */
+  /*--tracking-wide: 0.02em;  /*  orig 0.025em 2.5%  */
+  /*--tracking-wider:  0.05em  /* 5%  */
+  /*--tracking-widest: 0.1em /* 10%  */
+
+
+
+  /* Line Height */
+  /*--leading-none: 1;
+  /*--leading-tight: 1.25 /* orig 1.25 */
+  --leading-snug: 1.375 /* custom */
+  /*--text-xs--line-height: 1.1; /* orig calc(1 / 0.75); */
+  /*--text-sm--line-height: calc(1.25 / 0.875); */
+  /*--text-base--line-height: 1.05; /* (original calc(1.5 / 1); */
+  /*--text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl--line-height: calc(1.75 / 1.25); */
+  /*--text-2xl--line-height: 1.05; /* (original calc(2 / 1.5); */
+  /*--text-3xl--line-height: calc(2.25 / 1.875) */
+  /*--text-4xl--line-height: 1.05; /* (original calc(2.5 / 2.25) */
+  /*--text-5lg--line-height: 1.05; /* custom */
+  /*--text-5xl--line-height: 1 */
+  /*--text-6xl--line-height: 1.05; /* (original 1) */
+  /*--text-7xl--line-height: 1.05; /* (original 1) */
+  /*--text-8lg--line-height: 1; /* custom */
+  /*--text-8xl--line-height: 1.05; /* (original 1) */
+  /*--text-9xl--line-height: 1.05; /* (original 1) */
+  /*--text-10xl--line-height: 1.05;
+
+
+  /* Animation */
+  --animate-appearsin: appearsIn 1.2s ease forwards;
+  --animate-appearsout: appearsOut 0.6s ease forwards;
+  --animate-appearsmenu: appearsMenu 0.6s ease forwards;
+  --animate-disappearsmenu: disappearsMenu 0.6s ease forwards;
+
+  --default-transition-duration: 300ms; /*Original 150ms */
+  --default---default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Original: cubic-bezier(0.4, 0, 0.2, 1) */
+
+
+  /* Breakpoints. */
+  --breakpoint-sm: 600px;  /* Matches Gutenberg small */
+  --breakpoint-md: 782px;  /*  Matches Gutenberg medium */
+  --breakpoint-lg: 960px;  /*  Matches Gutenberg large */
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1792px; /*  1536px */
+  /*--breakpoint-3xl: 1792px; */
+
+  /* Padding */
+  --padding-18: 4.5rem; /* Custom */
+
+
+}
+
+
+@layer base {
+  html {
+    color: var(--color-black);
+    /* Set sans, serif or mono stack with optional custom font as default. */
+    /*font-family: var(--font-sans); */
+    font-family: var(--font-serif);
+    /* font-family: var(--font-mono); */
+  }
+  html, body {
+    /* overflow-x: hidden; */
+    overflow-x: clip;
+    /* scrollbar-gutter: stable; */
+  }
+
+  :root :where(.is-layout-flow) > *,
+  :root :where(.is-layout-constrained) > * {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+  }
+
+
+  :root {
+    --wp--style--global--content-size: 100vw !important;
+    @media (min-width: theme("screens.lg")) {
+      --wp--style--global--content-size: 60vw !important;
+      /* Original --wp--style--global--content-size: 1144px !important; */
+    }
+  }
+
+  :root :where(.is-layout-flow) > p,
+  :root :where(.is-layout-constrained) > p {
+    margin-block-end: 1rem !important;
+  }
+  :root :where(.is-layout-flow) > p.mb-0,
+  :root :where(.is-layout-constrained) > p.mb-0,
+  :root :where(.is-layout-flow) > p:last-of-type,
+  :root :where(.is-layout-constrained) > p:last-of-type {
+    margin-block-end: 0 !important;
+  }
+
+}
+
+
+@keyframes appearsIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes appearsOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+@keyframes appearsMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes disappearsMenu {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+

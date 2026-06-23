@@ -1,0 +1,73 @@
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.page-transition-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: var(--color-orange);
+  will-change: transform; /* Optimize for transform animations */
+}
+
+.page-transition-panel--left {
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
+.page-transition-panel--right {
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+[data-barba="wrapper"] {
+  position: relative;
+}
+
+[data-barba="container"] {
+  will-change: transform, opacity;
+}
+
+html.is-transitioning {
+  scroll-behavior: auto !important;
+}
+html.is-transitioning,
+html.is-transitioning body {
+  cursor: progress;
+}
+
+/* Disable pointer events during transitions to prevent interaction issues */
+html.is-transitioning a,
+html.is-transitioning button,
+html.is-transitioning [data-nav-link] {
+  pointer-events: none;
+}
+
+/* x-cloak directive to hide elements until they are ready */
+[x-cloak] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-panel,
+  [data-barba="container"] {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

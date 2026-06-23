@@ -1,0 +1,76 @@
+{
+  "__preprocessed__": "This file is used to build the theme.json file in the `public/build/assets` directory. The built artifact includes Tailwind's colors, fonts, and font sizes.",
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "layout": {
+      "contentSize": "48rem"
+    },
+    "background": {
+      "backgroundImage": true
+    },
+    "color": {
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false,
+      "defaultDuotone": false,
+      "defaultGradients": false,
+      "defaultPalette": false,
+      "duotone": [],
+      "palette": [
+        { "name": "Black", "slug": "black", "color": "var(--color-black)" },
+        { "name": "White", "slug": "white", "color": "var(--color-white)" },
+        { "name": "Chalk", "slug": "chalk", "color": "var(--color-chalk)" },
+        { "name": "Charcoal", "slug": "charcoal", "color": "var(--color-charcoal)" },
+        { "name": "Char", "slug": "char", "color": "var(--color-char)" },
+        { "name": "Walnut", "slug": "walnut", "color": "var(--color-walnut)" },
+        { "name": "Citrus", "slug": "citrus", "color": "var(--color-citrus)" },
+        { "name": "Sage", "slug": "sage", "color": "var(--color-sage)" },
+        { "name": "Teal", "slug": "teal", "color": "var(--color-teal)" },
+        { "name": "Lilac", "slug": "lilac", "color": "var(--color-lilac)" },
+        { "name": "Gray", "slug": "gray", "color": "var(--color-gray)" },
+        { "name": "Light Gray", "slug": "light-gray", "color": "var(--color-lightgray)" },
+        { "name": "Border Gray", "slug": "border", "color": "var(--color-border)" }
+      ]
+    },
+    "custom": {
+      "spacing": {},
+      "typography": {
+        "font-size": {},
+        "line-height": {}
+      }
+    },
+    "spacing": {
+      "padding": true,
+      "units": ["px", "%", "em", "rem", "vw", "vh"]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "customFontSize": false
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "color": {
+          "text": "var:preset|color|orange",
+          "background": "transparent"
+        },
+        "typography": {
+          "textDecoration": "underline"
+        },
+        "spacing": {
+          "padding": {
+            "top": "20px",
+            "right": "20px",
+            "bottom": "20px",
+            "left": "20px"
+          }
+        },
+        "border": {
+          "radius": "10px"
+        }
+      }
+    }
+  }
+}
