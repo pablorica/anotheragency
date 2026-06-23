@@ -2,3 +2,49 @@
 @source "../../app/**/*.php";
 @source "../**/*.blade.php";
 @source "../**/*.js";
+
+/* In app.css and editor.css
+@import './fonts.css';
+@import './base.css';
+@import './typography.css';
+
+@config '../js/tailwind.site.js';
+*/
+
+/* PCSS files */
+/* Functions */
+/* @import "./pcss/functions.pcss" */
+
+/* Assets */
+@import "./pcss/assets/globals.pcss";
+@import "./pcss/assets/forms.pcss";
+@import "./pcss/assets/carousel.pcss";
+
+
+/* Layout */
+@import "./pcss/layout/header.pcss";
+
+
+/* Blocks */
+@import "./pcss/blocks/button.pcss";
+@import "./pcss/blocks/group.pcss";
+@import "./pcss/blocks/spacer.pcss";
+@import "./pcss/blocks/image.pcss";
+@import "./pcss/blocks/column.pcss";
+@import "./pcss/blocks/paragraph.pcss";
+
+/* Pages **/
+@import "./pcss/pages/collaborators.pcss";
+@import "./pcss/pages/home.pcss";
+@import "./pcss/pages/single-collaborator.pcss";
+@import "./pcss/pages/jobs.pcss";
+
+
+/* Load effect */
+/* To enable load effect on all pages, uncomment the line below and enable the JS in app.js */
+@import "./pcss/layout/load-effect.pcss";
+/* If don't want to show the load effect, uncomment the following line
+.growing-button {
+  min-width: 100%;
+}
+*/

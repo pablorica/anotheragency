@@ -1,0 +1,158 @@
+.page-template-template-jobs {
+
+  .job-item.hidden {
+    display: none;
+  }
+  #jobs.hide-jobs {
+    .job-item {
+      display: none;
+      &.opened,
+      &.visible {
+        display: block;
+      }
+    }
+  }
+
+  .job-body {
+    h1, h2, h3, h4, h5, h6 {
+      @apply font-sans;
+      @apply mb-4;
+    }
+
+    h4 {
+      @apply text-base;
+    }
+
+    p, ul, li {
+      @apply text-sm md:text-xs 2xl:text-(--text-md);
+    }
+
+    ul {
+      @apply list-disc;
+      @apply pl-4;
+    }
+
+    &.accordion-collapse {
+      @media screen and (max-width: calc(theme("screens.md") - 1px)) {
+        overflow: hidden !important;
+      }
+    }
+  }
+
+  .toggle-form {
+    &.active {
+      @media screen and (min-width: theme("screens.md")) {
+        opacity: 0 !important;
+      }
+
+      @media screen and (max-width: calc(theme("screens.md") - 1px)) {
+        @apply bg-(--color-charcoal)  text-(--color-chalk);
+      }
+    }
+  }
+
+  .wpcf7 {
+    @apply font-sans font-light;
+
+    p {
+      @apply mb-2;
+    }
+
+    .wpcf7-submit {
+      @apply text-sm 2xl:text-(--text-md) py-2 px-1 md:py-[5px] md:px-[8px] 2xl:py-2 2xl:px-2 rounded-full;
+      @apply bg-(--color-chalk)  text-(--color-charcoal) cursor-pointer hover:bg-(--color-citrus) ;
+      @apply transition-colors duration-300;
+      @apply border border-(--color-charcoal)  block mx-auto;
+      @apply leading-none text-center w-[120px] md:w-[150px];
+    }
+
+    .wpcf7-spinner {
+      display: none;
+    }
+
+    .attachments {
+      @apply mt-0 text-sm;
+
+      .add-attachment {
+        @apply text-sm 2xl:text-(--text-md) py-2 px-1 md:py-[5px] md:px-[8px] 2xl:py-2 2xl:px-2 rounded-full;
+        @apply bg-(--color-charcoal) text-(--color-chalk) cursor-pointer;
+        @apply transition-colors duration-300;
+        @apply border border-(--color-charcoal)  block;
+        @apply leading-none text-center w-[120px] md:w-[150px];
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      .files {
+        @apply mt-3;
+        min-height: 50px;
+      }
+
+      .attachment {
+        @apply flex justify-between items-center gap-4;
+        max-width: 200px;
+
+        .attachment-name {
+          max-width: 150px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .attachment-remove {
+        cursor: pointer;
+      }
+    }
+
+    .wpcf7-response-output {
+      margin: 3px 20px 0;
+      text-align: center;
+      font-size: 10px;
+      display: block;
+      @apply font-normal p-0 border-0;
+    }
+
+    .invalid {
+      .wpcf7-response-output {
+        @apply text-(--color-walnut) ;
+      }
+    }
+
+    .sent {
+      .wpcf7-response-output {
+        @apply text-(--color-sage) ;
+      }
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    @apply text-(--color-walnut) ;
+    font-size: 10px;
+  }
+
+  .wpcf7-form-control.wpcf7-text {
+    @apply bg-(--color-chalk)  outline-0;
+    @apply border border-(--color-charcoal) ;
+    @apply text-sm 2xl:text-(--text-md) py-2 px-5 md:py-[5px] md:px-[10px] 2xl:py-2 2xl:px-5 rounded-full;
+
+    &.wpcf7-not-valid {
+      @apply border-(--color-walnut)  text-(--color-walnut) ;
+
+      &::placeholder {
+        @apply text-(--color-walnut) ;
+      }
+    }
+
+    ~ .wpcf7-not-valid-tip {
+      display: none;
+    }
+
+    @media screen and (max-width: calc(theme("screens.md") - 1px)) {
+      max-width: 80%;
+      @apply text-sm;
+    }
+  }
+}

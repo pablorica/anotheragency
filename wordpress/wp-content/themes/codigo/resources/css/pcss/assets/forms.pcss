@@ -1,0 +1,36 @@
+/*
+* CSS for Contact Form 7 Forms
+*/
+
+.wpcf7-form {
+  input {
+    border-radius: 5px;
+    background-color: var(--color-white);
+    padding: 20px 10px;
+    width: 100%;
+    @media (min-width: theme("screens.lg")) {
+      max-width: 385px;
+    }
+    &::placeholder {
+      color: var(--color-black);
+      opacity: 1;
+    }
+
+    &[type="submit"],
+    &[type="button"] {
+      width: inherit;
+    }
+
+  }
+
+  .wpcf7-submit {
+    @extend .btn-primary;
+  }
+}
+.calculator-form {
+  .wpcf7-submit {
+    @extend .btn-primary;
+  }
+}
+
+

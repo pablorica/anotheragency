@@ -1,45 +1,42 @@
+.admin-bar {
+  header#mainMenu {
+    &.md\:fixed {
+      top: 32px;
 
-header {
-  .menu-overlay {
-    @apply m-0 list-none p-0;
-    li {
-      @apply m-0 text-center;
-    }
-    a {
-      /* h2 */
-      @apply font-medium;
-      @apply tracking-normal;
-      @apply text-[13.8vw] sm:text-6xl lg:text-[5vw]; /* 56px mobile, 96px at 1920 */
+      @media screen and (max-width: 782px) {
+        top: 46px;
+      }
 
-      @apply text-black text-center no-underline  transition-colors;
-      &:hover, &:focus {
-        @apply text-orange;
+      @media screen and (max-width: 600px) {
+        top: 0;
       }
     }
-    & > li + li {
-      @apply mt-5 md:mt-7;
-    }
-  }
 
-  .menu-label {
-    .open-label {
-      /*color: var(--header-text-color);*/
-    }
-    .close-label {
-      @media (min-width:theme("screens.sm") ) and (max-width: calc(theme("screens.md") - 1px)) {
-        color: white;
+    .mobile-menu {
+      @media screen and (max-width: 782px) {
+        top: 46px;
       }
     }
-  }
-  .logo-icon svg path {
-    /*fill: var(--header-text-color);*/
   }
 }
-body.menu-open {
-  header {
-    .logo-icon svg path {
-      @media (min-width:theme("screens.sm") ) {
-        fill: white;
+
+.header-spacer {
+  @media (min-width: theme("screens.md")) {
+    height: 152px;
+  }
+  @media (min-width: theme("screens.xl")) {
+    height: 166px;
+  }
+  @media (min-width: theme("screens.2xl")) {
+    height: 196px;
+  }
+}
+
+.page-template-default.page {
+  header#mainMenu {
+    &.md\:fixed {
+      @media (max-width: calc(theme("screens.lg") - 1px)) {
+        width: 100%;
       }
     }
   }
