@@ -1,14 +1,8 @@
 
-import Emitter from 'tiny-emitter';
+//import Emitter from 'tiny-emitter';
 
-/**
- * VUE dependencies
- */
-import { createApp } from 'vue';
-import Example from './vuecomponents/Example.vue';
-import MenuCollapse from './vuecomponents/MenuCollapse.js';
 
-export var emitter = new Emitter();
+//export var emitter = new Emitter();
 
 /**
  * Custom modules
@@ -27,23 +21,6 @@ function domReady(callback) {
     document.addEventListener('DOMContentLoaded', callback);
   }
 }
-
-domReady(async () => {
-  //consoleHello('DOMContentLoaded')
-
-  /**
-   * VUE Components
-   */
-  if (document.getElementById("vueExample")) {
-    const app = createApp(Example);
-    app.mount('#vueExample');
-  }
-  //No working
-  if (document.getElementById("mainMenu2")) {
-    const app = createApp(MenuCollapse);
-    app.mount('#mainMenu2');
-  }
-});
 
 /**
  * Custom Modules
@@ -79,7 +56,10 @@ const CDG = {
   }
 };
 
-CDG.onreadyFunctions();
+domReady(async () => {
+  //consoleHello('DOMContentLoaded')
+  CDG.onreadyFunctions();
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {

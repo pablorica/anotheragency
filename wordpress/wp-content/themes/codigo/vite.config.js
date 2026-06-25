@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin'
-import vue from '@vitejs/plugin-vue'
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 // Set APP_URL if it doesn't exist for Laravel Vite plugin
@@ -39,7 +38,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    vue(),
     tailwindcss(),
     laravel({
       input: [

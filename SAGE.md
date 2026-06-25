@@ -23,6 +23,232 @@ Sage brings proper PHP templating and modern JavaScript tooling to WordPress the
 
 [Read the docs to get started](https://roots.io/sage/docs/installation/)
 
+
+
+---
+
+
+## SAGE Tools
+
+### Installing ACF Composer
+
+ACF Composer is the ultimate tool for creating fields, blocks, widgets, and option pages using ACF Builder alongside Sage 10.
+
+See the [ACF Composer installation](https://github.com/Log1x/acf-composer?tab=readme-ov-file#installation).
+
+
+#### Install via Composer:
+
+```bash
+cd wordpress/wp-content/themes/codigo
+composer require log1x/acf-composer
+```
+
+Start by publishing the `config/acf.php` configuration file using Acorn:
+
+```bash
+docker compose run wpcli acorn vendor:publish --tag="acf-composer"
+```
+
+
+If you have this warning
+
+```bash
+INFO No publishable resources for tag [acf-composer].
+```
+
+try running this command first
+
+```bash
+docker compose run wpcli acorn package:discover
+INFO  Discovering packages.  
+nesbot/carbon ......................................................... DONE
+nunomaduro/termwind ................................................... DONE
+roots/sage ............................................................ DONE
+```
+
+And try again:
+
+```bash
+docker compose run wpcli acorn vendor:publish --tag="acf-composer"
+INFO  Publishing [acf-composer] assets.
+Copying file [vendor/log1x/acf-composer/config/acf.php] to [config/acf.php] ............. DONE
+```
+
+##### Generating a Field Group
+
+To create your first field group, start by running the following generator command from your theme directory:   
+
+```bash
+docker compose run wpcli acorn acf:field Example
+```
+
+This will create `app/Fields/Example.php` which is where you will create and manage your first field group.
+
+##### Generating a Field Partial
+
+A field partial consists of a field group that can be re-used and/or added to existing field groups.
+
+```bash
+docker compose run wpcli acorn acf:partial ContainerButtons
+```
+This will create `app/Fields/Partials/ListItems.php`.
+
+This can be utilized in our `Example` field by passing the `::class` constant to `->addPartial()`
+
+```php
+->addPartial(ContainerButtons::class);
+```
+
+##### Generating a Option Group
+Option pages are a great way to create global settings for your theme. To create an option page, run the following command:
+
+```bash
+docker compose run wpcli acorn acf:option Example
+```
+This will create `app/Options/Example.php` which is where you will create and manage your first option page.
+
+##### Generating a Block
+
+Generating a block is generally the same as generating a field as seen above.
+
+Start by creating the block field using Acorn:
+
+```bash
+docker compose run wpcli acorn acf:block Example
+    
+🎉 Example block successfully composed.
+  ⮑  app/Blocks/Example.php
+  ⮑  resources/views/blocks/example.blade.php
+```
+
+You may also pass --construct to the command above to generate a stub with the block properties set within an attributes method. This can be useful for localization, etc.
+
+```bash
+docker compose run wpcli acorn acf:block Example --construct
+```
+
+When running the block generator, one difference to a generic field is an accompanied View is generated in the resources/views/blocks directory.
+
+Like the field generator, the example block contains a simple list repeater and is working out of the box.
+
+*Block Preview View*
+
+While `$block->preview` is an option for conditionally modifying your block when shown in the editor, you may also render your block using a seperate view.
+
+Simply duplicate your existing view prefixing it with `preview-` (e.g. `preview-example.blade.php`).
+
+
+### Poet
+
+```bash
+cd wordpress/wp-content/themes/codigo
+composer require log1x/poet
+```
+
+Start with publishing the Poet configuration file using Acorn:
+
+```bash
+docker compose run wpcli acorn vendor:publish --provider="Log1x\Poet\PoetServiceProvider"
+...
+  Copying file [vendor/log1x/poet/config/poet.php] to [config/poet.php] ..... DONE
+```
+
+### Registering a Post Type
+
+All configuration related to Poet is located in `config/poet.php`. Here you will find an example Book post type pre-configured with a few common settings:
+
+```php
+    'post' => [
+        'book' => [
+            'enter_title_here' => 'Enter book title',
+            'menu_icon' => 'dashicons-book-alt',
+            'supports' => ['title', 'editor', 'author', 'revisions', 'thumbnail'],
+            'show_in_rest' => true,
+            'has_archive' => false,
+            'labels' => [
+                'singular' => 'Book',
+                'plural' => 'Books',
+            ],
+        ],
+    ],
+```
+
+
+### Sage directives
+
+[Sage Directives](https://log1x.github.io/sage-directives-docs/) adds a variety of useful Blade directives for use with Sage 10 including directives for WordPress, ACF, and various miscellaneous helpers.
+
+
+
+#### Install Sage directives
+
+```bash
+cd wordpress/wp-content/themes/codigo
+composer require log1x/sage-directives
+```
+
+#### Sage directives Examples
+
+[Wordpress](https://log1x.github.io/sage-directives-docs/usage/wordpress.html)
+
+**`WP_Query`**
+
+`@query` initializes a standard `WP_Query` as `$query` and accepts the usual `WP_Query` parameters as an array.
+
+```blade
+@query([
+  'post_type' => 'post'
+])
+
+@posts
+  <h2  class="entry-title">@title</h2>
+  <div  class="entry-content">
+    @content
+  </div>
+@endposts
+```
+
+[ACF](https://log1x.github.io/sage-directives-docs/usage/acf.html)
+
+**`@field`**
+
+
+`@field` echoes the specified field using `get_field()`.
+
+```blade
+@field('text')
+```
+
+
+**`@option`**
+
+
+`@option` echoes the specified theme options field using ` get_field($field, 'option')`.
+
+```blade
+@option('text')
+```
+
+### SAGE commands
+
+Clear cache
+
+```bash
+docker compose run wpcli acorn optimize:clear
+docker compose exec app php artisan view:clear
+```
+
+php artisan view:clear
+
+---
+
+
+
+
+
+
+
 ## Support us
 
 Roots is an independent open source org, supported only by developers like you. Your sponsorship funds [WP Packages](https://wp-packages.org/) and the entire Roots ecosystem, and keeps them independent. Support us by purchasing [Radicle](https://roots.io/radicle/) or [sponsoring us on GitHub](https://github.com/sponsors/roots) — sponsors get access to our private Discord.

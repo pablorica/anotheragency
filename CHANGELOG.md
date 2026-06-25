@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.1.3] - 2026-06-25
+
+### Updated
+
+- Removed VUE from project
+
 
 ## [0.1.2] - 2026-06-23
 

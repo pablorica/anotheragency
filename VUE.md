@@ -85,3 +85,70 @@ docker compose run --rm node sh -lc "npm run dev"
 
 You should see “Hello from Vue!” rendered in your theme!
 
+
+## Uninstall Vue
+
+If you no longer need Vue in your Sage project, remove it by following these steps:
+
+**1. Uninstall the packages**
+
+```bash
+npm uninstall vue @vitejs/plugin-vue
+
+## If Docker is used, run the following commands inside the Node container:
+docker compose run --rm node sh -lc "npm uninstall vue @vitejs/plugin-vue"
+```
+
+**2. Remove the Vue plugin from `vite.config.js`**
+
+Delete the Vue import:
+
+```js
+import vue from '@vitejs/plugin-vue'
+```
+
+And remove the plugin from the `plugins` array:
+
+```js
+plugins: [
+  tailwindcss(),
+  ...
+]
+```
+
+**3. Remove Vue initialization**
+
+Delete any Vue-related imports and mounting code from your JavaScript entry file (for example, `resources/js/app.js`):
+
+```js
+import { createApp } from 'vue'
+import Example from './vuecomponents/Example.vue';
+
+if (document.getElementById("vueExample")) {
+  const app = createApp(Example);
+  app.mount('#vueExample');
+}
+```
+
+**4. Remove Vue components**
+
+Delete any `.vue` component files (for example, `resources/js/vuecomponents/`) if they are no longer needed.
+
+**5. Remove Vue mount points**
+
+Remove any Vue root elements from your Blade templates or HTML, for example:
+
+```html
+<div id="vueExample"></div>
+```
+
+**6. Restart the development server**
+
+```bash
+npm run dev
+
+## Or if Docker is used, run the following command inside the Node container:
+docker compose run --rm node sh -lc "npm run dev"
+```
+
+Your Sage project will now run without Vue.
