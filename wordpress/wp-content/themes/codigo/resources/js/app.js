@@ -1,8 +1,23 @@
-
 //import Emitter from 'tiny-emitter';
-
-
 //export var emitter = new Emitter();
+
+import Alpine from 'alpinejs'
+
+import collapse from '@alpinejs/collapse'
+import focus from '@alpinejs/focus'
+import intersect from '@alpinejs/intersect'
+import persist from '@alpinejs/persist'
+import menuCollapse from "./alpine/menuCollapse";
+
+Alpine.plugin(collapse)
+Alpine.plugin(focus)
+Alpine.plugin(intersect)
+Alpine.plugin(persist)
+
+Alpine.data('menuCollapse', menuCollapse)
+
+window.Alpine = Alpine
+Alpine.start()
 
 /**
  * Custom modules
@@ -65,5 +80,3 @@ domReady(async () => {
 document.addEventListener('DOMContentLoaded', () => {
   CDG.onloadFunctions();
 });
-
-

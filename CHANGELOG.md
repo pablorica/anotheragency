@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ---
 
+## [0.1.4] - 2026-06-25
+
+### Added
+
+- AlpineJS
+
+
 ## [0.1.3] - 2026-06-25
 
 ### Updated
