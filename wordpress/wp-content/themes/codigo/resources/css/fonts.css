@@ -4,23 +4,21 @@
   font-family: 'Matter Medium';
   src: url('@fonts/MatterMedium/MatterMedium.woff');
   src: url('@fonts/MatterMedium/MatterMedium.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 300;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-Italic.woff2') format('woff2');
-  font-weight: normal;
+  font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
@@ -29,7 +27,6 @@
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-Medium.woff2') format('woff2');
   font-weight: 500;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -44,15 +41,14 @@
 @font-face {
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-SemiBold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
+  font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-SemiBoldItalic.woff2') format('woff2');
-  font-weight: bold;
+  font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
@@ -61,7 +57,6 @@
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-Bold.woff2') format('woff2');
   font-weight: 700;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -77,7 +72,6 @@
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-ExtraBold.woff2') format('woff2');
   font-weight: 800;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -93,7 +87,6 @@
   font-family: 'Swiss Time';
   src: url('@fonts/SwissTime/SwissTime-Black.woff2') format('woff2');
   font-weight: 900;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -105,5 +98,20 @@
   font-display: swap;
 }
 
-
-
+/*
+@font-face {
+  font-family: 'Aeonik';
+  src: url('@fonts/Aeonik/aeonik-light.woff2') format('woff2'),
+      url('@fonts/Aeonik/aeonik-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('@fonts/Aeonik/aeonik-bold.woff2') format('woff2'),
+      url('@fonts/Aeonik/aeonik-bold.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+} */

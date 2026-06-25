@@ -21,6 +21,7 @@
   /* Fonts */
   --font-sans: 'Matter Medium', sans-serif;
   --font-serif: 'Swiss Time', serif;
+  /*--font-serif: 'Aeonik', serif;*/
 
   --font-weight-*: initial;
   /* --font-weight-hairline: 100;
@@ -48,15 +49,15 @@
   --text-6xl: 60px; /* orig 3.75rem */
   --text-7xl: 72px; /* orig 4.5rem */
   --text-8xl: 86px; /* 6rem  */
-  --text-9xl: 106px /* custom */
+  --text-9xl: 106px; /* custom */
 
 
 
   /* Letter Spacing */
 
   /*--tracking-tighter: -0.05em; /* -5%  */
-  --tracking-tight:  -0.025em /* -2.5%  */
-  --tracking-normal: 0  /* 0em */
+  --tracking-tight:  -0.025em; /* -2.5%  */
+  --tracking-normal: 0;  /* 0em */
   /*--tracking-wide: 0.02em;  /*  orig 0.025em 2.5%  */
   /*--tracking-wider:  0.05em  /* 5%  */
   /*--tracking-widest: 0.1em /* 10%  */
@@ -66,7 +67,7 @@
   /* Line Height */
   /*--leading-none: 1;
   /*--leading-tight: 1.25 /* orig 1.25 */
-  --leading-snug: 1.375 /* custom */
+  --leading-snug: 1.375; /* custom */
   /*--text-xs--line-height: 1.1; /* orig calc(1 / 0.75); */
   /*--text-sm--line-height: calc(1.25 / 0.875); */
   /*--text-base--line-height: 1.05; /* (original calc(1.5 / 1); */
@@ -122,6 +123,8 @@
     /* overflow-x: hidden; */
     overflow-x: clip;
     /* scrollbar-gutter: stable; */
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
 
   :root :where(.is-layout-flow) > *,
@@ -149,7 +152,6 @@
   :root :where(.is-layout-constrained) > p:last-of-type {
     margin-block-end: 0 !important;
   }
-
 }
 
 

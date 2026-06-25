@@ -1,3 +1,56 @@
+body {
+  background-color: var(--color-chalk);
+}
+:where(figure) {
+  margin: 0;
+}
+
+.container, .fluid-container, .container-fluid {
+  padding-left: calc(env(safe-area-inset-left, 0rem) + 1.25rem);
+  padding-right: calc(env(safe-area-inset-right, 0rem) + 1.25rem);
+  @media screen and (min-width: theme("screens.lg")) {
+    padding-left: calc(env(safe-area-inset-left, 0rem) + 2rem);
+    padding-right: calc(env(safe-area-inset-left, 0rem) + 2rem);
+  }
+}
+
+/*
+* Wordpress default
+*/
+:root :where(.wp-element-button, .wp-block-button__link) {
+  background-color: transparent;
+}
+.editor-visual-editor .editor-styles-wrapper :where(.wp-element-button, .editor-styles-wrapper .wp-block-button__link) {
+  background-color: transparent;
+}
+
+:root :where(.wp-block-columns.is-layout-flex) {
+  gap: 0.5em;
+}
+@media screen and (min-width: 1024px) {
+  :root :where(.wp-block-columns.is-layout-flex) {
+    gap: 2em;
+  }
+}
+
+/*
+* Load effect
+*/
+.container.page-content > *:not(.noloadeffect),
+article.container .p-article__content > *:not(.noloadeffect),
+article.project .e-content > *:not(.noloadeffect) {
+  opacity: 0;
+  transform:translateY(70px);
+  transition: all ease 0.5s;
+}
+.container.page-content > *.scroll-loaded,
+article.container .p-article__content > *.scroll-loaded,
+article.project .e-content > *.scroll-loaded {
+  opacity: 1;
+  transform:none;
+}
+
+
 .btn-primary {
   font-size: 0.8rem;
   font-weight: 700;
@@ -81,6 +134,16 @@ body:not(.wp-admin) .hide-desktop {
   border-color: var(--color-border) !important;
 }
 
+@media (max-width: calc(theme("screens.md") - 1px)) {
+  #app {
+    min-height: 100dvh;
+  }
+
+  .admin-bar #app {
+    min-height: calc(100dvh - 46px);
+  }
+}
+
 @media (min-width: theme("screens.md")) {
   #app {
     height: 100dvh;
@@ -95,21 +158,7 @@ body:not(.wp-admin) .hide-desktop {
   }
 }
 
-@media (max-width: 782px) {
-  .admin-bar #app {
-    min-height: calc(100dvh - 46px);
-  }
-}
 
-@media (max-width: calc(theme("screens.md") - 1px)) {
-  #app {
-    min-height: 100dvh;
-  }
-
-  .admin-bar #app {
-    min-height: calc(100dvh - 46px);
-  }
-}
 
 /* Scrollbar transparent */
 /* Works in Chrome, Edge, and Safari */
@@ -136,4 +185,14 @@ body:not(.wp-admin) .hide-desktop {
 * {
   scrollbar-width: none;       /* completely hides the scrollbar */
   scrollbar-color: transparent transparent; /* thumb and track */
+}
+
+
+.font-light {
+  font-weight: var(--font-weight-light) !important;
+}
+@media (min-width: theme("screens.md")) {
+  .md\:font-normal {
+    font-weight: var(--font-weight-normal) !important;
+  }
 }

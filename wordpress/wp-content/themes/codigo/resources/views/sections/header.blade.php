@@ -8,9 +8,8 @@
   x-data="menuCollapse"
   class="banner w-full
     sticky top-0 z-50
-    lg:static
     bg-chalk lg:bg-opacity-0
-    {{ get_field('fixed_header') || is_singular('collaborator') ? 'lg:fixed lg:top-0 lg:w-auto' : '' }}"
+    {{ get_field('fixed_header') || is_singular('collaborator') ? 'lg:fixed lg:top-0 lg:w-auto' : 'lg:static' }}"
 >
   <nav
     class="nav-primary @option('header_layout_container') py-5 relative"
@@ -26,8 +25,7 @@
             text-7xl md:text-8xl 2xl:text-9xl
             text-charcoal leading-[0.75]"
           >
-            <span class="hidden md:block
-              @if( get_field('mobile_bigheaderfooter',get_the_ID()) ) !block @endif"
+            <span class="@if( get_field('mobile_bigheaderfooter',get_the_ID()) ) block  @else hidden md:block  @endif"
             >{{ __('Canvas', 'codigo') }}</span>
           </a>
         </div>
@@ -39,10 +37,11 @@
         text-7xl md:text-8xl 2xl:text-9xl
         text-charcoal leading-[0.75]"
       >
-        <span class="hidden md:block
-          @if( get_field('mobile_bigheaderfooter',get_the_ID()) ) !block @endif"
+        <span class="
+          @if( get_field('mobile_bigheaderfooter',get_the_ID()) ) block @else hidden md:block  @endif"
         >{{ __('Canvas', 'codigo') }}</span>
-        <span class="h-[56px] block md:hidden @if( get_field('mobile_bigheaderfooter',get_the_ID()) ) !hidden @endif">
+        <span class="h-[56px]
+        @if( get_field('mobile_bigheaderfooter',get_the_ID()) ) hidden @else block md:hidden  @endif">
           @include(
             'icons.logo',
             [
