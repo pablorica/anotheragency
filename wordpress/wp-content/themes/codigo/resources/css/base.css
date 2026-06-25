@@ -192,3 +192,16 @@
   }
 }
 
+
+@layer utilities {
+
+  .font-light {
+    font-weight: var(--font-weight-light) !important;
+  }
+  @media (min-width: theme("screens.md")) {
+    .md\:font-normal {
+      font-weight: var(--font-weight-normal) !important;
+    }
+  }
+}
+

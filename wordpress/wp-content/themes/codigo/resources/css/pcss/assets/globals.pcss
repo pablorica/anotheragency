@@ -5,15 +5,6 @@ body {
   margin: 0;
 }
 
-.container, .fluid-container, .container-fluid {
-  padding-left: calc(env(safe-area-inset-left, 0rem) + 1.25rem);
-  padding-right: calc(env(safe-area-inset-right, 0rem) + 1.25rem);
-  @media screen and (min-width: theme("screens.lg")) {
-    padding-left: calc(env(safe-area-inset-left, 0rem) + 2rem);
-    padding-right: calc(env(safe-area-inset-left, 0rem) + 2rem);
-  }
-}
-
 /*
 * Wordpress default
 */
@@ -185,14 +176,4 @@ body:not(.wp-admin) .hide-desktop {
 * {
   scrollbar-width: none;       /* completely hides the scrollbar */
   scrollbar-color: transparent transparent; /* thumb and track */
-}
-
-
-.font-light {
-  font-weight: var(--font-weight-light) !important;
-}
-@media (min-width: theme("screens.md")) {
-  .md\:font-normal {
-    font-weight: var(--font-weight-normal) !important;
-  }
 }

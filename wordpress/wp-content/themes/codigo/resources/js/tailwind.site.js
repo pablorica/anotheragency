@@ -46,8 +46,12 @@ export default {
           marginLeft: 'auto',
           marginRight: 'auto',
           maxWidth: '100%',
+          paddingLeft: theme('spacing.5'),
+          paddingRight: theme('spacing.5'),
           '@media (min-width: 782px)': {
             maxWidth: '1144px',
+            paddingLeft: theme('spacing.8'),
+            paddingRight: theme('spacing.8'),
           },
         },
         '.fluid-container, .container-fluid': {
@@ -55,6 +59,12 @@ export default {
           maxWidth: '100%',
           marginLeft: 'auto',
           marginRight: 'auto',
+          paddingLeft: theme('spacing.5'),
+          paddingRight: theme('spacing.5'),
+          '@media (min-width: 782px)': {
+            paddingLeft: theme('spacing.8'),
+            paddingRight: theme('spacing.8'),
+          },
         },
         '.outer-grid': {
           paddingTop: 0,
