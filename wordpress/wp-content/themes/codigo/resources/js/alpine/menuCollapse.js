@@ -23,6 +23,7 @@ export default () => ({
 
   toggleMenu() {
     document.querySelector('body').classList.toggle('overflow-hidden');
+    //console.log('toggleMenu', this.menuCollapse);
 
     if (this.menuCollapse) {
       const mobileMenu = document.querySelector('header .mobile-menu');
@@ -34,6 +35,8 @@ export default () => ({
     } else {
       this.menuCollapse = !this.menuCollapse;
     }
+
+    console.log('toggleMenu processed: ', this.menuCollapse);
 
     if (this.menuCollapse) {
       this.searchCollapse = false;

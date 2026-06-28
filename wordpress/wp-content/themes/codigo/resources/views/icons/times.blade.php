@@ -13,6 +13,7 @@
         'svg_width' => 16,
         'svg_height' => 16,
         'svg_class' => 'mx-4',
+        'stroke_colour' => 'black',
       ]
     )
 --}}
@@ -25,8 +26,8 @@
   viewBox="0 0 50 50"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <circle cx="25" cy="25" r="22" stroke="black" stroke-width="1.5" fill="none"></circle>
-  <line x1="25" y1="10" x2="25" y2="40" stroke="black" stroke-width="1.5"></line>
-  <line x1="10" y1="25" x2="40" y2="25" stroke="black" stroke-width="1.5"></line>
+  <circle cx="25" cy="25" r="22" stroke="{{ $stroke_colour ?? 'black' }}" stroke-width="1.5" fill="none"></circle>
+  <line x1="25" y1="10" x2="25" y2="40" stroke="{{ $stroke_colour ?? 'black' }}" stroke-width="1.5"></line>
+  <line x1="10" y1="25" x2="40" y2="25" stroke="{{ $stroke_colour ?? 'black' }}" stroke-width="1.5"></line>
 </svg>
 <!-- End /views/icons/times.blade.php -->

@@ -1,4 +1,5 @@
-<div class="fluid-container pt-5 pb-0 flex flex-col h-full">
+<div class="fluid-container pt-5 pb-0 flex flex-col h-full"
+>
   <div>
     <div class="flex flex-wrap items-center justify-between w-full">
       <div>
@@ -13,17 +14,20 @@
         aria-label="Toggle Menu"
         class="px-2 py-1 ml-auto md:hidden"
         aria-expanded="false"
-        @click="this.toggleMenu"
+        @click="toggleMenu"
       >
-        <svg
-          class="transition-transform duration-300"
-          :class="{ 'rotate transform rotate-45': this.menuCollapse }"
-          width="35" height="35" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"
+      <div class="transition-transform duration-300"
+          :class="{ 'rotate transform rotate-45': menuCollapse }"
         >
-          <circle cx="25" cy="25" r="22" stroke="#E6E1DC" stroke-width="1.5" fill="none"></circle>
-          <line x1="25" y1="10" x2="25" y2="40" stroke="#E6E1DC" stroke-width="1.5"></line>
-          <line x1="10" y1="25" x2="40" y2="25" stroke="#E6E1DC" stroke-width="1.5"></line>
-        </svg>
+          @include(
+            'icons.times',
+            [
+              'svg_width' => 35,
+              'svg_height' => 35,
+              'stroke_colour' => '#E6E1DC',
+            ]
+          )
+        </div>
       </button>
     </div>
 
@@ -41,7 +45,7 @@
               border border-chalk block hover:border-citrus
               leading-none text-center hover:text-charcoal
               overflow-ellipsis overflow-hidden whitespace-nowrap
-              {{ $item->object_id == get_the_ID() ? '!bg-chalk !text-charcoal' : 'text-chalk' }}
+              {{ $item->object_id == get_the_ID() ? 'bg-chalk! text-charcoal!' : 'text-chalk' }}
             "
           >
             {{ $item->title }}
@@ -62,7 +66,7 @@
             text-3xl leading-none
             hover:text-citrus block
             transition-colors duration-300
-            {{ $item->object_id == get_the_ID() ? '!text-citrus' : 'text-chalk' }}
+            {{ $item->object_id == get_the_ID() ? 'text-citrus!' : 'text-chalk' }}
           "
         >
           {{ $item->title }}
@@ -79,7 +83,7 @@
             text-3xl leading-none
             hover:text-citrus block
             transition-colors duration-300
-            {{ $item->object_id == get_the_ID() ? '!text-citrus' : 'text-chalk' }}
+            {{ $item->object_id == get_the_ID() ? 'text-citrus!' : 'text-chalk' }}
           "
         >
           {{ $item->title }}

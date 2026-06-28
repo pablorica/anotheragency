@@ -147,6 +147,7 @@ wordpress/wp-content/themes/*
 
 # track example files, if they exist
 !*.example
+!*.staging
 
 # track favicon files, if they exist
 !android-chrome-*.png
