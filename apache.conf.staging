@@ -1,0 +1,43 @@
+# anotheragency
+# /etc/apache2/sites-available/anotheragency.conf
+
+<VirtualHost *:80>
+    ServerName anotheragency.codigo.co.uk
+
+    # Equivalent of client_max_body_size 256m
+    LimitRequestBody 268435456
+
+    ProxyPreserveHost On
+    ProxyRequests Off
+
+    # Main app -> 127.0.0.1:8459
+    ProxyPass /pma !
+    ProxyPass / http://127.0.0.1:8459/
+    ProxyPassReverse / http://127.0.0.1:8459/
+
+    <Location /pma>
+        # redirect /pma -> /pma/ happens automatically via RedirectMatch below
+    </Location>
+
+    # redirect /pma -> /pma/ (matches your nginx "location = /pma")
+    RedirectMatch ^/pma$ /pma/
+
+    # phpMyAdmin under a subpath, with basic auth, stripping /pma prefix
+    <Location /pma/>
+        AuthType Basic
+        AuthName "Restricted"
+        AuthUserFile /srv/docker/anotheragency/.htpasswd-pma
+        Require valid-user
+    </Location>
+
+    ProxyPass /pma/ http://127.0.0.1:8109/
+    ProxyPassReverse /pma/ http://127.0.0.1:8109/
+
+    RequestHeader set X-Forwarded-Proto "https"
+    RequestHeader set X-Forwarded-Port "443"
+
+    ProxyTimeout 300
+
+    ErrorLog ${APACHE_LOG_DIR}/anotheragency_error.log
+    CustomLog ${APACHE_LOG_DIR}/anotheragency_access.log combined
+</VirtualHost>
