@@ -7,7 +7,7 @@
           href="{{ home_url('/') }}"
           class="brand-header text-7xl text-chalk leading-[0.75]"
         >
-          {{ __('Canvas', 'codigo') }}
+          {{ __('Another', 'codigo') }}
         </a>
       </div>
       <button
@@ -98,7 +98,7 @@
           href="{{ home_url('/') }}"
           class="brand-footer text-7xl text-chalk"
         >
-          {{ __('Careers', 'codigo') }}
+          {{ __('Agency', 'codigo') }}
         </a>
       </div>
   </div>

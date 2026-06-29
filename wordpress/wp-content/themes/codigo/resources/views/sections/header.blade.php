@@ -26,7 +26,7 @@
             text-charcoal leading-[0.75]"
           >
             <span class="@if( get_field('mobile_bigheaderfooter',get_the_ID()) ) block  @else hidden md:block  @endif"
-            >{{ __('Canvas', 'codigo') }}</span>
+            >{{ __('Another', 'codigo') }}</span>
           </a>
         </div>
         {{-- End Animated Brand --}}
@@ -39,14 +39,14 @@
       >
         <span class="
           @if( get_field('mobile_bigheaderfooter',get_the_ID()) ) block @else hidden md:block  @endif"
-        >{{ __('Canvas', 'codigo') }}</span>
+        >{{ __('Another', 'codigo') }}</span>
         <span class="h-[56px]
         @if( get_field('mobile_bigheaderfooter',get_the_ID()) ) hidden @else block md:hidden  @endif">
           @include(
             'icons.logo',
             [
-              'svg_width' => 1000,
-              'svg_height' => 430.4,
+              'svg_width' => 145,
+              'svg_height' => 56,
               'svg_class' => 'h-full',
               'path_class' => 'fill-charcoal',
             ]

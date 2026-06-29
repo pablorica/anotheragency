@@ -64,7 +64,7 @@
             class="brand-footer
             text-7xl md:text-8xl 2xl:text-9xl
             text-charcoal leading-[0.75]"
-          ><span class="block">{{ __('Careers', 'codigo') }}</span></a>
+          ><span class="block">{{ __('Agency', 'codigo') }}</span></a>
         </div>
       {{-- End Animated Brand --}}
       @endif
@@ -73,7 +73,7 @@
           class="brand-footer
           text-7xl md:text-8xl 2xl:text-9xl
           text-charcoal leading-[0.75]"
-        ><span class="block">{{ __('Careers', 'codigo') }}</span></a>
+        ><span class="block">{{ __('Agency', 'codigo') }}</span></a>
     </div>
   </div>
 
@@ -86,7 +86,7 @@
             class="brand-footer
             text-7xl md:text-8xl 2xl:text-9xl
             text-charcoal leading-[0.75]"
-          ><span class="block">{{ __('Careers', 'codigo') }}</span></a>
+          ><span class="block">{{ __('Agency', 'codigo') }}</span></a>
         </div>
       {{-- End Animated Brand --}}
       @endif
@@ -94,7 +94,7 @@
       href="{{ home_url('/') }}"
       class="brand-footer 2xl:text-9xl text-7xl text-charcoal"
     >
-      {{ __('Careers', 'codigo') }}
+      {{ __('Agency', 'codigo') }}
     </a>
   </div>
 </footer>
