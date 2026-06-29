@@ -11,7 +11,10 @@
     ProxyRequests Off
 
     # Main app -> 127.0.0.1:8459
-    ProxyPass /pma !
+    # ProxyPass /pma ! <-- no working well,  more specific /pma/ rule must come BEFORE the catch-all /
+    ProxyPass /pma/ http://127.0.0.1:8109/
+    ProxyPassReverse /pma/ http://127.0.0.1:8109/
+    
     ProxyPass / http://127.0.0.1:8459/
     ProxyPassReverse / http://127.0.0.1:8459/
 
