@@ -1,1 +1,167 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+@import "tailwindcss" theme(static);
+@source "../../app/**/*.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";
+
+/* In app.css and editor.css */
+@import './fonts.css';
+@import './base.css';
+@import './typography.css';
+
+@config '../js/tailwind.site.js';
+
+
+.is-root-container {
+  .hidden {
+    display: initial !important;
+    opacity: 0.5;
+  }
+  .lg\:block{
+    @media (min-width: theme("screens.lg")) {
+      opacity: 1;
+    }
+  }
+  .lg\:hidden {
+    @media (min-width: theme("screens.lg")) {
+      display: initial !important;
+      opacity: 0.5;
+    }
+  }
+}
+
+
+.is-style-hide-mobile,
+.is-style-hide-desktop {
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05) 10px,
+      rgba(0, 0, 0, 0.1) 10px,
+      rgba(0, 0, 0, 0.1) 20px
+  );
+  & > * {
+    opacity: 0.8;
+  }
+}
+
+
+.is-style-hide-mobile {
+  @media screen and (max-width: calc(theme("screens.lg") - 1px)) {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(206, 8, 127, 0.15) 10px,
+      rgba(206, 8, 127, 0.25) 10px,
+      rgba(206, 8, 127, 0.25) 20px
+    );
+    & > * {
+      opacity: 0.5;
+    }
+  }
+}
+
+.is-style-hide-desktop {
+  @media screen and (min-width: theme("screens.lg")) {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(206, 8, 127, 0.15) 10px,
+      rgba(206, 8, 127, 0.25) 10px,
+      rgba(206, 8, 127, 0.25) 20px
+    );
+    & > * {
+      opacity: 0.5;
+    }
+  }
+}
+
+
+
+
+
+.\!w-1\/2 {
+  width: 50% !important;
+}
+.block-editor .edit-post-sidebar .acf-fields > .acf-field.\!w-1\/2 {
+  width: 49% !important;
+  display: inline-block;
+}
+
+.block-editor .tiny-carousel > div {
+  display: none;
+  figure {
+    width: 60%;
+    margin: auto;
+  }
+}
+.block-editor .smooth-carousel .tiny-carousel > div{
+  display: block;
+}
+.block-editor .tiny-carousel > div:first-child {
+  display: block
+}
+
+
+.editor-canvas__iframe,
+.editor-styles-wrapper {
+  padding: 2rem /* 32px */ !important;
+}
+
+/* Fixes Gutenberg's cover block color picker. */
+.components-circular-option-picker__option {
+  border-radius: 50%;
+}
+
+/* Matches the page title font weight. */
+.editor-post-title .editor-post-title__input {
+  @extend h1;
+}
+
+/* Block group outlined */
+.wp-block-group {
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px !important;
+  .wp-block-group {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    margin-bottom: 0 !important;
+    box-shadow: none;
+  }
+}
+.wp-block {
+  border: 1px solid transparent;
+  &:hover {
+    border-color: red;
+  }
+}
+
+.logo-img {
+  width: 100%;
+  svg {
+    width: 100%;
+  }
+}
+
+.wp-block-separator {
+  background-color: #ececec;
+  border-color: black;
+}
+
+.wp-block-columns {
+  margin-bottom: 10px !important;
+  .wp-block-column {
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.section-calculator-module .wp-block-column-image img {
+  position: static;
+}
+
+
+body.post-type-project .editor-sidebar__panel #tabs-0-edit-post\/document-view .components-panel__body {
+  display: none;
+}
+
+
