@@ -68,7 +68,6 @@ yarn.lock
 # Ignore builder files and folders
 /node_modules
 /vendor
-/public/*
 /.env
 /.budfiles
 /npm-debug.log
@@ -185,16 +184,15 @@ wordpress/wp-content/themes/codigo/.budfiles
 wordpress/wp-content/themes/codigo/npm-debug.log
 wordpress/wp-content/themes/codigo/yarn-error.log
 wordpress/wp-content/themes/codigo/yarn.lock
-#wordpress/wp-content/themes/codigo/package-lock.json
 wordpress/wp-content/themes/codigo/composer.lock
 wordpress/wp-content/themes/codigo/assets/css/style.css
 wordpress/wp-content/themes/codigo/assets/css/*.map
+
 #wordpress/wp-content/themes/codigo/theme.json
+#wordpress/wp-content/themes/codigo/package-lock.json
 
 
 # Ignore everything in public
 wordpress/wp-content/themes/codigo/public/*
 # But allow the Vite build output
 !wordpress/wp-content/themes/codigo/public/build/
-!wordpress/wp-content/themes/codigo/public/build/**
-

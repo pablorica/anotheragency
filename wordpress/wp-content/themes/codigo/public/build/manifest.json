@@ -1,0 +1,108 @@
+{
+  "editor.deps.json": {
+    "file": "assets/editor.deps-CP11t64Z.json",
+    "src": "editor.deps.json"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Cw9dDlyi.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "assets": [
+      "assets/MatterMedium-DJTIoPfX.woff",
+      "assets/MatterMedium-Dvscn9ov.woff2",
+      "assets/SwissTime-Regular-0_Enuz5M.woff2",
+      "assets/SwissTime-Italic-DDDQPkRa.woff2",
+      "assets/SwissTime-Medium-DQOv8LfI.woff2",
+      "assets/SwissTime-MediumItalic-5z9V-dCe.woff2",
+      "assets/SwissTime-SemiBold-D0BW7l-n.woff2",
+      "assets/SwissTime-SemiBoldItalic-DwTj-qIF.woff2",
+      "assets/SwissTime-Bold-B6UCQmEK.woff2",
+      "assets/SwissTime-BoldItalic-orqiz7wO.woff2",
+      "assets/SwissTime-ExtraBold-CpEwxqdw.woff2",
+      "assets/SwissTime-ExtraBoldItalic-CZ27bNRr.woff2",
+      "assets/SwissTime-Black-DvRq5i64.woff2",
+      "assets/SwissTime-BlackItalic-DCLNh3lg.woff2"
+    ]
+  },
+  "resources/css/editor.css": {
+    "file": "assets/editor-OGUqz_2a.css",
+    "name": "editor",
+    "names": [
+      "editor.css"
+    ],
+    "src": "resources/css/editor.css",
+    "isEntry": true
+  },
+  "resources/fonts/MatterMedium/MatterMedium.woff": {
+    "file": "assets/MatterMedium-DJTIoPfX.woff",
+    "src": "resources/fonts/MatterMedium/MatterMedium.woff"
+  },
+  "resources/fonts/MatterMedium/MatterMedium.woff2": {
+    "file": "assets/MatterMedium-Dvscn9ov.woff2",
+    "src": "resources/fonts/MatterMedium/MatterMedium.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-Black.woff2": {
+    "file": "assets/SwissTime-Black-DvRq5i64.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-Black.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-BlackItalic.woff2": {
+    "file": "assets/SwissTime-BlackItalic-DCLNh3lg.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-BlackItalic.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-Bold.woff2": {
+    "file": "assets/SwissTime-Bold-B6UCQmEK.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-Bold.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-BoldItalic.woff2": {
+    "file": "assets/SwissTime-BoldItalic-orqiz7wO.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-BoldItalic.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-ExtraBold.woff2": {
+    "file": "assets/SwissTime-ExtraBold-CpEwxqdw.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-ExtraBold.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-ExtraBoldItalic.woff2": {
+    "file": "assets/SwissTime-ExtraBoldItalic-CZ27bNRr.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-ExtraBoldItalic.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-Italic.woff2": {
+    "file": "assets/SwissTime-Italic-DDDQPkRa.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-Italic.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-Medium.woff2": {
+    "file": "assets/SwissTime-Medium-DQOv8LfI.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-Medium.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-MediumItalic.woff2": {
+    "file": "assets/SwissTime-MediumItalic-5z9V-dCe.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-MediumItalic.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-Regular.woff2": {
+    "file": "assets/SwissTime-Regular-0_Enuz5M.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-Regular.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-SemiBold.woff2": {
+    "file": "assets/SwissTime-SemiBold-D0BW7l-n.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-SemiBold.woff2"
+  },
+  "resources/fonts/SwissTime/SwissTime-SemiBoldItalic.woff2": {
+    "file": "assets/SwissTime-SemiBoldItalic-DwTj-qIF.woff2",
+    "src": "resources/fonts/SwissTime/SwissTime-SemiBoldItalic.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CHUnKkHu.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/editor.js": {
+    "file": "assets/editor-C6vPB_6u.js",
+    "name": "editor",
+    "src": "resources/js/editor.js",
+    "isEntry": true
+  }
+}
