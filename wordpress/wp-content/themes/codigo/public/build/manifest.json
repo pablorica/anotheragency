@@ -29,13 +29,29 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-ByQ58ahO.css",
+    "file": "assets/editor-B_3K3sd2.css",
     "name": "editor",
     "names": [
       "editor.css"
     ],
     "src": "resources/css/editor.css",
-    "isEntry": true
+    "isEntry": true,
+    "assets": [
+      "assets/MatterMedium-DJTIoPfX.woff",
+      "assets/MatterMedium-Dvscn9ov.woff2",
+      "assets/SwissTime-Regular-0_Enuz5M.woff2",
+      "assets/SwissTime-Italic-DDDQPkRa.woff2",
+      "assets/SwissTime-Medium-DQOv8LfI.woff2",
+      "assets/SwissTime-MediumItalic-5z9V-dCe.woff2",
+      "assets/SwissTime-SemiBold-D0BW7l-n.woff2",
+      "assets/SwissTime-SemiBoldItalic-DwTj-qIF.woff2",
+      "assets/SwissTime-Bold-B6UCQmEK.woff2",
+      "assets/SwissTime-BoldItalic-orqiz7wO.woff2",
+      "assets/SwissTime-ExtraBold-CpEwxqdw.woff2",
+      "assets/SwissTime-ExtraBoldItalic-CZ27bNRr.woff2",
+      "assets/SwissTime-Black-DvRq5i64.woff2",
+      "assets/SwissTime-BlackItalic-DCLNh3lg.woff2"
+    ]
   },
   "resources/fonts/MatterMedium/MatterMedium.woff": {
     "file": "assets/MatterMedium-DJTIoPfX.woff",
